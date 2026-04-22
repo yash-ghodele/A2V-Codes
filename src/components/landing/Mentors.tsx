@@ -1,26 +1,30 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, User } from "lucide-react";
+import { CheckCircle2, User, Cpu, Users, GraduationCap, Compass, Cloud, Server, Layers, ShieldCheck } from "lucide-react";
 
 const mentors = [
   {
     name: "Yash",
     role: "Co-Founder, A2V Codes",
     points: [
-      "Executive Head of technical community & event leadership",
-      "Built multiple IoT systems including real-time monitoring solutions",
-      "Focused on helping students understand and confidently present projects",
-    ]
+      { text: "Executive Head of technical community & event leadership", icon: Users },
+      { text: "Built multiple IoT systems (real-time monitoring, embedded solutions)", icon: Cpu },
+      { text: "Experience in guiding students through technical projects and presentations", icon: Compass },
+      { text: "Strong focus on making students confident in viva and practical understanding", icon: GraduationCap }
+    ],
+    highlightLine: "Focuses on helping students not just build projects, but explain them like experts."
   },
   {
-    name: "[Partner Name]",
+    name: "Aniket Bankar",
     role: "Co-Founder, A2V Codes",
     points: [
-      "Web & Cloud Engineer",
-      "Expertise in scalable systems and modern web technologies",
-      "Ensures robust, reliable, and well-structured project solutions",
-    ]
+      { text: "Full Stack & Cloud Engineer (Next.js, AWS, DevOps)", icon: Cloud },
+      { text: "Built secure, scalable web systems and SaaS platforms", icon: Server },
+      { text: "Expertise in cloud deployment, automation, and system architecture", icon: Layers },
+      { text: "Led technical teams and engineered real-world applications with 99.9% uptime", icon: ShieldCheck }
+    ],
+    highlightLine: "Ensures every project is technically strong, scalable, and industry-level — not just a college demo."
   }
 ];
 
@@ -43,7 +47,7 @@ export function Mentors() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="glass-card p-8 rounded-3xl relative overflow-hidden group"
+              className="glass-card p-8 rounded-3xl relative overflow-hidden group flex flex-col hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-primary/20"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full transition-colors group-hover:bg-primary/10" />
               
@@ -58,14 +62,23 @@ export function Mentors() {
                 </div>
               </div>
 
-              <ul className="space-y-4 relative z-10">
-                {mentor.points.map((point, i) => (
-                  <li key={i} className="flex gap-3 text-muted-foreground leading-relaxed">
-                    <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                    <span>{point}</span>
-                  </li>
-                ))}
+              <ul className="space-y-4 mb-8 relative z-10 flex-grow">
+                {mentor.points.map((point, i) => {
+                  const Icon = point.icon;
+                  return (
+                    <li key={i} className="flex gap-3 text-muted-foreground leading-relaxed">
+                      <Icon className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <span>{point.text}</span>
+                    </li>
+                  );
+                })}
               </ul>
+              
+              <div className="pt-6 border-t border-white/10 relative z-10">
+                <p className="text-sm font-semibold italic text-primary">
+                  "{mentor.highlightLine}"
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
