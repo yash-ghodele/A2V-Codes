@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageCircle, Mail, MapPin, ArrowUp, Heart, ChevronRight, Github, Linkedin } from "lucide-react";
+import { MessageCircle, Mail, MapPin, ArrowUp, Heart, ChevronRight, Globe } from "lucide-react";
 
 export function Footer() {
   const scrollToTop = () => {
@@ -31,10 +31,10 @@ export function Footer() {
                 <MessageCircle className="w-5 h-5" />
               </a>
               <a href="#" className="w-12 h-12 rounded-2xl glass flex items-center justify-center hover:bg-primary hover:text-background hover:scale-105 transition-all duration-300">
-                <Linkedin className="w-5 h-5" />
+                <Globe className="w-5 h-5" />
               </a>
               <a href="#" className="w-12 h-12 rounded-2xl glass flex items-center justify-center hover:bg-primary hover:text-background hover:scale-105 transition-all duration-300">
-                <Github className="w-5 h-5" />
+                <Mail className="w-5 h-5" />
               </a>
             </div>
           </div>
