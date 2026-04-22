@@ -27,7 +27,7 @@ export function FinalCTA() {
               Get Started
               <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button size="lg" variant="outline" className="h-16 px-10 text-xl rounded-2xl border-background text-background hover:bg-background hover:text-primary transition-all shadow-2xl">
+            <Button size="lg" variant="outline" className="h-16 px-10 text-xl rounded-2xl bg-transparent border-2 border-background text-background hover:bg-background hover:text-primary transition-all shadow-2xl">
               <MessageCircle className="mr-2 w-6 h-6" />
               WhatsApp Now
             </Button>
