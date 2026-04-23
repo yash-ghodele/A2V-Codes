@@ -1,70 +1,62 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { Hammer, BrainCircuit, Presentation } from "lucide-react";
 
 const pillars = [
   {
-    title: "Build",
+    icon: Hammer,
+    title: "1. Build",
     description: "Hands-on guidance to assemble your project from scratch. You see it coming to life.",
   },
   {
-    title: "Understand",
+    icon: BrainCircuit,
+    title: "2. Understand",
     description: "Deep dive into every sensor, line of code, and connection. No black boxes.",
   },
   {
-    title: "Present",
+    icon: Presentation,
+    title: "3. Present",
     description: "Mock viva sessions and presentation training to make you the expert in the room.",
   },
 ];
 
 export function Positioning() {
   return (
-    <section className="py-24 relative overflow-hidden">
-      <div className="container px-4 mx-auto">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
-          <div className="lg:w-1/2">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              We work <span className="text-primary">differently.</span>
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              A2V TECH Solutions is not a project factory. We are a mentorship hub. 
-              We focus on the student as much as the system.
-            </p>
-            
-            <div className="space-y-6">
-              {pillars.map((pillar, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="flex gap-4"
-                >
-                  <div className="mt-1">
-                    <CheckCircle2 className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-1">{pillar.title}</h4>
-                    <p className="text-muted-foreground">{pillar.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+    <section className="py-32 relative bg-secondary/5">
+      <div className="container px-4 mx-auto relative z-10">
+        <div className="text-center mb-20 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter">
+            We work <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">differently.</span>
+          </h2>
+          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+            A2V Codes is not a project factory. We are a mentorship hub. 
+            We focus on the student as much as the system.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-12 relative">
+          {/* Connector Line for Desktop */}
+          <div className="hidden md:block absolute top-12 left-[15%] right-[15%] h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
           
-          <div className="lg:w-1/2 relative">
-            <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 to-blue-500/10 border border-white/10 flex items-center justify-center p-12">
-              <div className="relative w-full h-full glass rounded-2xl flex items-center justify-center text-center p-8">
-                <div className="space-y-4">
-                  <div className="text-6xl font-bold text-primary">100%</div>
-                  <div className="text-2xl font-medium">Viva Readiness</div>
-                  <p className="text-muted-foreground">Our students don't just pass. They impress.</p>
-                </div>
+          {pillars.map((pillar, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2, type: "spring", stiffness: 100 }}
+              className="relative flex flex-col items-center text-center group"
+            >
+              <div className="w-24 h-24 rounded-3xl bg-background border-2 border-white/5 flex items-center justify-center mb-8 relative z-10 group-hover:border-primary/50 group-hover:-translate-y-2 group-hover:shadow-[0_0_40px_rgba(6,182,212,0.2)] transition-all duration-500">
+                <pillar.icon className="w-10 h-10 text-primary group-hover:scale-110 transition-transform duration-500" />
               </div>
-            </div>
-          </div>
+              <h3 className="text-2xl font-bold mb-4">{pillar.title}</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-sm">
+                {pillar.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
