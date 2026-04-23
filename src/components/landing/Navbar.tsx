@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Logo } from "@/components/ui/Logo";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
