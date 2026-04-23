@@ -5,8 +5,8 @@ import { CheckCircle2, User, Cpu, Users, GraduationCap, Compass, Cloud, Server, 
 
 const mentors = [
   {
-    name: "Yash",
-    role: "Co-Founder, A2V Codes",
+    name: "Yash Ghodele",
+    role: "CTO, A2V Codes",
     points: [
       { text: "Executive Head of technical community & event leadership", icon: Users },
       { text: "Built multiple IoT systems (real-time monitoring, embedded solutions)", icon: Cpu },
@@ -17,7 +17,7 @@ const mentors = [
   },
   {
     name: "Aniket Bankar",
-    role: "Co-Founder, A2V Codes",
+    role: "CEO & Founder, A2V Codes",
     points: [
       { text: "Full Stack & Cloud Engineer (Next.js, AWS, DevOps)", icon: Cloud },
       { text: "Built secure, scalable web systems and SaaS platforms", icon: Server },
@@ -50,7 +50,7 @@ export function Mentors() {
               className="glass-card p-8 rounded-3xl relative overflow-hidden group flex flex-col hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-primary/20"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full transition-colors group-hover:bg-primary/10" />
-              
+
               <div className="flex items-center gap-6 mb-8 relative z-10">
                 <div className="w-20 h-20 rounded-2xl bg-secondary/50 border border-white/10 flex items-center justify-center shrink-0 overflow-hidden shadow-xl">
                   {/* Placeholder for actual image */}
@@ -73,7 +73,7 @@ export function Mentors() {
                   );
                 })}
               </ul>
-              
+
               <div className="pt-6 border-t border-white/10 relative z-10">
                 <p className="text-sm font-semibold italic text-primary">
                   "{mentor.highlightLine}"
