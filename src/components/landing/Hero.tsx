@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { MessageCircle, ArrowRight, Zap, AlertTriangle } from "lucide-react";
@@ -10,6 +11,23 @@ export function Hero() {
     <section id="hero" className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden">
       <div className="hero-glow" />
       <div className="hero-glow-alt" />
+
+      {/* Floating 3D Assets */}
+      <motion.div 
+        className="absolute hidden lg:block top-1/4 left-[10%] w-64 h-64 opacity-60 z-0 pointer-events-none"
+        animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <Image src="/assets/cube1.png" alt="3D Glass Cube" fill className="object-contain" priority />
+      </motion.div>
+
+      <motion.div 
+        className="absolute hidden lg:block bottom-1/4 right-[10%] w-80 h-80 opacity-60 z-0 pointer-events-none"
+        animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+      >
+        <Image src="/assets/cube2.png" alt="3D Glass Cube Alternative" fill className="object-contain" priority />
+      </motion.div>
       
       <div className="container px-4 mx-auto relative z-10">
         <div className="max-w-4xl mx-auto text-center">
