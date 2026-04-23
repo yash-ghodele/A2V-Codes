@@ -53,15 +53,21 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <Button variant="outline" size="sm" className="hidden sm:flex glass rounded-full" asChild>
-              <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-2 w-4 h-4 text-green-500" />
-                WhatsApp
-              </a>
-            </Button>
-            <Button size="sm" className="rounded-full shadow-lg shadow-primary/20" asChild>
-              <a href="#lead-magnet">Join Now</a>
-            </Button>
+            <a 
+              href="https://wa.me/91XXXXXXXXXX" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={cn(buttonVariants({ variant: "outline", size: "sm" }), "hidden sm:flex glass rounded-full h-9 px-4")}
+            >
+              <MessageCircle className="mr-2 w-4 h-4 text-green-500" />
+              WhatsApp
+            </a>
+            <a 
+              href="#lead-magnet"
+              className={cn(buttonVariants({ size: "sm" }), "rounded-full shadow-lg shadow-primary/20 h-9 px-4 flex items-center justify-center")}
+            >
+              Join Now
+            </a>
           </div>
         </div>
       </div>
