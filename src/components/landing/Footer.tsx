@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { MessageCircle, Mail, MapPin, ArrowUp, Heart, ChevronRight, Globe } from "lucide-react";
+import { Logo } from "@/components/ui/Logo";
 
 export function Footer() {
   const scrollToTop = () => {
@@ -9,9 +10,13 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-background pt-24 pb-8 border-t border-white/5 relative overflow-hidden">
-      {/* Subtle top glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-50" />
+    <footer className="bg-background relative pt-32 pb-12 border-t border-white/5 overflow-hidden">
+      {/* Massive Brand Watermark */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-black text-white/[0.02] whitespace-nowrap select-none pointer-events-none z-0">
+        A2V CODES
+      </div>
+
+      {/* Top ambient glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container px-4 mx-auto relative z-10">
@@ -19,9 +24,9 @@ export function Footer() {
           
           {/* Brand Column */}
           <div className="md:col-span-5 lg:col-span-4">
-            <h2 className="text-4xl font-black mb-6 tracking-tighter">
-              A2V <span className="text-primary">Codes</span>.
-            </h2>
+            <div className="mb-6">
+              <Logo className="scale-125 origin-left" />
+            </div>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed max-w-sm">
               Stop surviving submissions. Start mastering engineering. 
               The premium mentorship hub for real builders.
