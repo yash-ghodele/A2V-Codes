@@ -2,34 +2,67 @@
 
 import { motion } from "framer-motion";
 import { Logo } from "@/components/ui/Logo";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
+import { MessageCircle } from "lucide-react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
+
+const navLinks = [
+  { name: "Process", href: "#hero" },
+  { name: "Mentors", href: "#mentors" },
+  { name: "Pricing", href: "#pricing" },
+];
 
 export function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <motion.header 
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 w-full z-50 pt-4 px-4 pointer-events-none"
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
+        isScrolled 
+          ? "bg-background/80 backdrop-blur-md border-white/10 py-3" 
+          : "bg-transparent border-transparent py-5"
+      )}
     >
-      <div className="max-w-5xl mx-auto">
-        <div className="glass bg-background/50 backdrop-blur-2xl border border-white/10 rounded-full h-16 px-6 flex items-center justify-between pointer-events-auto shadow-2xl shadow-primary/5">
+      <div className="container px-4 mx-auto">
+        <div className="flex items-center justify-between">
           <Logo />
           
-          <div className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground">
-            <a href="#hero" className="hover:text-primary transition-colors">Home</a>
-            <a href="#pricing" className="hover:text-primary transition-colors">Pricing</a>
-          </div>
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.name} 
+                href={link.href}
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
 
-          <a 
-            href="#lead-magnet" 
-            className={cn(buttonVariants({ size: "sm" }), "rounded-full px-5 hidden sm:flex group")}
-          >
-            Get Guidance
-            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
+          <div className="flex items-center gap-4">
+            <Button variant="outline" size="sm" className="hidden sm:flex glass rounded-full" asChild>
+              <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="mr-2 w-4 h-4 text-green-500" />
+                WhatsApp
+              </a>
+            </Button>
+            <Button size="sm" className="rounded-full shadow-lg shadow-primary/20" asChild>
+              <a href="#lead-magnet">Join Now</a>
+            </Button>
+          </div>
         </div>
       </div>
     </motion.header>
