@@ -1,12 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { MessageCircle, ArrowRight, Zap, AlertTriangle } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden">
+    <section id="hero" className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden">
       <div className="hero-glow" />
       <div className="hero-glow-alt" />
       
@@ -27,21 +28,29 @@ export function Hero() {
               Don’t just submit your EE project. Learn it, explain it, and <span className="text-foreground font-semibold">score confidently in your viva.</span>
             </p>
           </motion.div>
-
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button size="lg" className="h-14 px-8 text-lg rounded-full group">
+            <a 
+              href="#lead-magnet" 
+              className={cn(buttonVariants({ size: "lg" }), "h-14 px-8 text-lg rounded-full group")}
+            >
               Get Project Guidance
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button size="lg" variant="outline" className="h-14 px-8 text-lg rounded-full glass group">
+            </a>
+            <a 
+              href="https://wa.me/91XXXXXXXXXX" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={cn(buttonVariants({ size: "lg", variant: "outline" }), "h-14 px-8 text-lg rounded-full glass group")}
+            >
               <MessageCircle className="mr-2 w-5 h-5 text-green-500" />
               Chat on WhatsApp
-            </Button>
+            </a>
           </motion.div>
 
           <motion.div

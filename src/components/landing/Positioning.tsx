@@ -23,7 +23,7 @@ const pillars = [
 
 export function Positioning() {
   return (
-    <section className="py-32 relative bg-secondary/5">
+    <section className="py-32 relative bg-background">
       <div className="container px-4 mx-auto relative z-10">
         <div className="text-center mb-20 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter">
