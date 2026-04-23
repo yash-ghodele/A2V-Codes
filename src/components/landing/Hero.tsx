@@ -77,7 +77,7 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="w-full lg:w-1/2 h-[400px] lg:h-[600px] relative z-10 hidden md:block"
+            className="w-full lg:w-1/2 h-[400px] lg:h-[600px] relative z-10 hidden md:block mix-blend-screen opacity-90"
           >
             {/* A beautiful dark-theme abstract 3D shape scene */}
             <Spline scene="https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode" />
