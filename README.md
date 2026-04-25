@@ -61,4 +61,5 @@ To take this platform from "Live" to "Fully Automated," consider these upcoming 
 - **[ ] Blog / Guide Repository**: Build a CMS-driven section for engineering tips and tricks to improve long-term SEO.
 
 ---
-Built with 💜 by Antigravity for A2V Codes.
+
+Built with ❤️ for A2V Codes.
