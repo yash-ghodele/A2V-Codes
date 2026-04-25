@@ -30,7 +30,7 @@ const mentors = [
 
 export function Mentors() {
   return (
-    <section className="py-24 relative bg-background">
+    <section id="mentors" className="py-24 relative bg-background">
       <div className="container px-4 mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Meet Your Mentors</h2>

@@ -15,7 +15,7 @@ const benefits = [
 
 export function Pricing() {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section id="pricing" className="py-24 relative overflow-hidden">
       <div className="hero-glow opacity-30" />
       
       <div className="container px-4 mx-auto">

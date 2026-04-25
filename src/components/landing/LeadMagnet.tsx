@@ -36,7 +36,7 @@ export function LeadMagnet() {
   };
 
   return (
-    <section className="py-24 bg-primary/10 relative overflow-hidden">
+    <section id="lead-magnet" className="py-24 bg-primary/10 relative overflow-hidden">
       <div className="container px-4 mx-auto">
         <div className="max-w-5xl mx-auto glass rounded-[3rem] p-8 md:p-16 flex flex-col lg:flex-row items-center gap-12 border-primary/20">
           <div className="lg:w-1/2">
